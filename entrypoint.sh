@@ -17,7 +17,7 @@ upgrade () {
   curver=${curdir##*-} # 5.1.1
   curverm=${curver%.*} # 5.1
 
-  if [ "$curver" == "${SEAFILE_VERSION}" ]; then
+  if [ "$curver" = "${SEAFILE_VERSION}" ]; then
     echo Already on ${SEAFILE_VERSION}
     exit 0
   fi
