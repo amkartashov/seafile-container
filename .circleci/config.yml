@@ -7,8 +7,8 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
-      - run: docker build -t gorilych/seafile:CIRCLE_TAG .
+      - run: docker login -u $DOCKER_USER -p $DOCKER_PASS registry.hub.docker.com
+      - run: docker build -t gorilych/seafile:$CIRCLE_TAG .
       - run: docker push gorilych/seafile:$CIRCLE_TAG
 workflows:
   version: 2
